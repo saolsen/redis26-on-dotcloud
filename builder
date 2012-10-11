@@ -8,7 +8,7 @@
 #cp src/redis-server ~/redis-server
 #cp ../redis.conf ~/redis.conf.in1
 #echo "Setting env vars"
-env | grep ^SERVICE_ZNC_ > ~/profile
+env | grep ^SERVICE_JREDIS_ > ~/profile
 cd
 cat profile
 cat environment.yml
