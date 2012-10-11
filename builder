@@ -6,6 +6,7 @@ make
 cp src/redis-server ~/redis-server
 cp ../redis.conf ~/redis.conf
 cd
-sed 's/{port}/$PORT_REDIS/' redis.conf
-sed 's/{password}/$REDISPASS/' redis.conf
-
+cp redis.conf redis.conf.in
+sed -e "s|{port}|${PORT_REDIS}|" redis.conf.in > redis.conf
+cp redis.conf redis.conf.in
+sed -e "s|{password}|${REDISPASS}|" redis.conf.in > redis.conf
