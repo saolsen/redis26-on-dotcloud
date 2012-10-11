@@ -9,7 +9,7 @@ cp src/redis-server ~/redis-server
 cp ../redis.conf ~/redis.conf.in1
 cd
 echo "Setting env vars"
-sed -e "s|{port}|${PORT_REDIS}|" redis.conf.in1 > redis.conf.in2
+sed -e "s|{port}|${DOTCLOUD_REDIS_REDIS_PORT}|" redis.conf.in1 > redis.conf.in2
 sed -e "s|{password}|${REDISPASS}|" redis.conf.in2 > redis.conf
 echo "for debugging"
 cat redis.conf
