@@ -6,12 +6,10 @@ cd redis-2.6.0-rc8
 echo "Building redis"
 make
 cp src/redis-server ~/redis-server
-cp ../redis.conf ~/redis.conf
+cp ../redis.conf ~/redis.conf.in1
 cd
 echo "Setting env vars"
-cp redis.conf redis.conf.in
-sed -e "s|{port}|${PORT_REDIS}|" redis.conf.in > redis.conf
-cp redis.conf redis.conf.in
-sed -e "s|{password}|${REDISPASS}|" redis.conf.in > redis.conf
+sed -e "s|{port}|${PORT_REDIS}|" redis.conf.in1 > redis.conf.in2
+sed -e "s|{password}|${REDISPASS}|" redis.conf.in2 > redis.conf
 echo "for debugging"
 cat redis.conf
