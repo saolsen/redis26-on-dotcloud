@@ -1,0 +1,8 @@
+redis:
+  type: custom
+  buildscript: builder
+  ports:
+    redis: tcp
+  systempackages:
+    - tcl8.5
+  process: ./redis-server redis.conf
