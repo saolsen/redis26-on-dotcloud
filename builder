@@ -7,8 +7,10 @@
 #make
 #cp src/redis-server ~/redis-server
 #cp ../redis.conf ~/redis.conf.in1
-cd
 #echo "Setting env vars"
+env | grep ^SERVICE_ZNC_ > ~/profile
+cd
+cat profile
 cat environment.yml
 port=$(awk '/PORT_REDIS/ {print $2;}' environment.yml)
 echo $port
