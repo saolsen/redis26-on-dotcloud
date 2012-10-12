@@ -1,6 +1,7 @@
 redis:
   type: custom
   buildscript: builder
+  postinstall: postinstall
   ports:
     redis: tcp
   systempackages:
